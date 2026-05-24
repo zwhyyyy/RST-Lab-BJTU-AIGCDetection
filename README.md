@@ -1,6 +1,6 @@
 # AIGC Detection Method Papers
 
-This is the summary page for method-oriented papers on AIGC detection from our RST-Lab research group at Beijing Jiaotong University. We focus on reliable detection methods for increasingly realistic AI-generated content and hope these works can support further research in the community.
+This is the summary page for method-oriented papers on AIGC detection from our [RST-Lab](https://rstao-bjtu.github.io/people/) research group at Beijing Jiaotong University. We focus on reliable detection methods for increasingly realistic AI-generated content and hope these works can support further research in the community.
 
 ## Table of Contents
 
