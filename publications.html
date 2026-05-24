@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Publications | AIGC Detection</title>
+  <link rel="icon" type="image/jpg" href="https://rstao95.github.io/Imgs/buaa_icon.jpg">
+  <style>
+    :root {
+      --text: #222326;
+      --muted: #656b74;
+      --line: #dfe4ea;
+      --paper: #ffffff;
+      --soft: #f6f8f7;
+      --accent: #0f766e;
+      --warm: #b45309;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--soft);
+      color: var(--text);
+      font-family: Lato, Verdana, Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--warm);
+    }
+
+    .page {
+      width: min(900px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 46px;
+    }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 28px 30px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.25;
+    }
+
+    h2 {
+      margin: 28px 0 12px;
+      font-size: 22px;
+    }
+
+    .topline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .home {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 13px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: #0b534d;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .paper-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .paper-list li {
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .title {
+      font-weight: 700;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .links {
+      margin-top: 5px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="panel">
+      <div class="topline">
+        <h1>All Publications</h1>
+        <a class="home" href="index.html">Home Page</a>
+      </div>
+
+      <h2>2026</h2>
+      <ul class="paper-list">
+        <li>
+          <div class="title">
+            Leveraging Unlabeled Data from Unknown Sources via Dual-Path Guidance for Deepfake Face Detection.
+          </div>
+          <div class="meta">CVPR 2026. Unlabeled deepfake face data / Dual-path guidance / Generalization.</div>
+          <div class="links">
+            [<a href="https://arxiv.org/abs/2508.09022">Paper</a>]
+            [<a href="https://arxiv.org/pdf/2508.09022">PDF</a>]
+            [<a href="https://github.com/happyangzq/DPGNet">Code</a>]
+          </div>
+        </li>
+        <li>
+          <div class="title">
+            Leveraging Failed Samples: A Few-Shot and Training-Free Framework for Generalized Deepfake Detection.
+          </div>
+          <div class="meta">AAAI 2026. Few-shot deepfake detection / Training-free framework / Generalization.</div>
+          <div class="links">
+            [<a href="https://arxiv.org/abs/2508.09475">Paper</a>]
+            [<a href="https://arxiv.org/pdf/2508.09475">PDF</a>]
+            [<a href="https://github.com/zuiluorenjian/FTNet">Code</a>]
+          </div>
+        </li>
+      </ul>
+
+      <h2>2025</h2>
+      <ul class="paper-list">
+        <li>
+          <div class="title">
+            ODDN: Addressing Unpaired Data Challenges in Open-World Deepfake Detection on Online Social Networks.
+          </div>
+          <div class="meta">AAAI 2025. AIGC detection / Open-world deepfake detection / Online social networks.</div>
+          <div class="links">
+            [<a href="https://arxiv.org/abs/2410.18687">Paper</a>]
+            [<a href="https://arxiv.org/pdf/2410.18687">PDF</a>]
+            [<a href="https://github.com/ManyiLee/Open-world-Deepfake-Detection-Network">Code</a>]
+          </div>
+        </li>
+        <li>
+          <div class="title">
+            Unlocking the Potential of Lightweight Quantized Models for Deepfake Detection.
+          </div>
+          <div class="meta">IJCAI 2025. Lightweight deepfake detection / Model quantization / Edge deployment.</div>
+          <div class="links">
+            [<a href="https://www.ijcai.org/proceedings/2025/0059.pdf">Paper</a>]
+            [<a href="https://github.com/rstao-bjtu/QMDD">Code</a>]
+          </div>
+        </li>
+        <li>
+          <div class="title">
+            SAGNet: Decoupling Semantic-Agnostic Artifacts From Limited Training Data for Robust Generalization in Deepfake Detection.
+          </div>
+          <div class="meta">IEEE TIFS. Limited-data deepfake detection / Semantic-agnostic artifacts / Robust generalization.</div>
+          <div class="links">
+            [<a href="https://ieeexplore.ieee.org/document/11045799">Paper</a>]
+            [<a href="https://github.com/rstao-bjtu/SAGNet/">Code</a>]
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Method papers for AIGC detection from our research group.">
+  <title>AIGC Detection Method Papers</title>
+  <link rel="icon" type="image/jpg" href="https://rstao95.github.io/Imgs/buaa_icon.jpg">
+  <style>
+    :root {
+      --text: #222326;
+      --muted: #666c75;
+      --line: #dfe4ea;
+      --paper: #ffffff;
+      --soft: #f6f8f7;
+      --accent: #0f766e;
+      --accent-dark: #0b534d;
+      --warm: #b45309;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--soft);
+      color: var(--text);
+      font-family: Lato, Verdana, Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--warm);
+    }
+
+    .page {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 46px;
+    }
+
+    .hero,
+    .section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .hero {
+      padding: 30px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4vw, 44px);
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: 23px;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    .lead {
+      max-width: 840px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .nav a,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 7px 13px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--accent-dark);
+      font-weight: 700;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .nav a:hover,
+    .button:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 24px 30px;
+    }
+
+    .research-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .research-list li {
+      border-left: 3px solid var(--accent);
+      background: #f9fbfa;
+      padding: 10px 12px;
+      color: #34383d;
+      font-weight: 700;
+    }
+
+    .news {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .news li + li {
+      margin-top: 10px;
+    }
+
+    .date {
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .paper {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 24px;
+      padding: 0;
+    }
+
+    .paper + .paper {
+      margin-top: 26px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    .paper-figure {
+      margin: 0;
+      align-self: start;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .paper-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .paper-title {
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
+
+    .paper-meta {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #e8f3f1;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .abstract {
+      margin: 0;
+      color: #373b40;
+      text-align: justify;
+    }
+
+    .footer {
+      margin-top: 22px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 22px, 980px);
+        padding-top: 12px;
+      }
+
+      .hero,
+      .section {
+        padding: 20px;
+      }
+
+      .research-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .paper {
+        grid-template-columns: 1fr;
+      }
+
+      .paper-figure {
+        max-width: 420px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .research-list {
+        grid-template-columns: 1fr;
+      }
+
+      .nav a,
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero" id="top">
+      <p class="eyebrow">Research Group Papers</p>
+      <h1>AIGC Detection Method Papers</h1>
+      <p class="lead">
+        This page summarizes method-oriented papers on AIGC detection from our RST-Lab research
+        group at Beijing Jiaotong University. We focus on reliable detection methods for
+        increasingly realistic AI-generated content and hope these works can support further
+        research in the community.
+      </p>
+
+      <nav class="nav" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#news">News</a>
+        <a href="#papers">Method Papers</a>
+        <a href="publications.html">All Publications</a>
+      </nav>
+    </section>
+
+    <section class="section" id="introduction">
+      <h2>Introduction</h2>
+      <p>
+        With the rapid development of generative models, AIGC detection has become an important
+        research topic for media forensics, platform governance, and trustworthy AI. In real online
+        environments, detection models must handle diverse generation pipelines, image qualities,
+        compression settings, and open-world distribution shifts. This project introduces our studies
+        on method design for AIGC detection. Each paper entry highlights paper titles, paper
+        links, open-source code, and concise summaries of each method, with a focus on
+        open-world detection, deepfake detection, robust representation learning, and online social
+        networks.
+      </p>
+    </section>
+
+    <section class="section" id="news">
+      <h2>News</h2>
+      <ul class="news">
+        <li>
+          <span class="date">[2024.12]</span>
+          Our paper <a href="#oddn">ODDN</a> is accepted by AAAI 2025.
+        </li>
+        <li>
+          <span class="date">[2025.04]</span>
+          Our paper <a href="#qmdd">QMDD</a> is accepted by IJCAI 2025.
+        </li>
+        <li>
+          <span class="date">[2025.06]</span>
+          Our paper <a href="#sagnet">SAGNet</a> is accepted by IEEE TIFS.
+        </li>
+        <li>
+          <span class="date">[2025.11]</span>
+          Our paper <a href="#ftnet">FTNet</a> is accepted by AAAI 2026.
+        </li>
+        <li>
+          <span class="date">[2026.02]</span>
+          Our paper <a href="#dpgnet">DPGNet</a> is accepted by CVPR 2026.
+        </li>
+        <li>
+          <span class="date">[Update]</span>
+          More AIGC detection method papers will be added here.
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="papers">
+      <h2>Method Papers</h2>
+
+      <article class="paper" id="oddn">
+        <figure class="paper-figure">
+          <img src="./Imgs/PaperPhotos/ODDN.png" alt="ODDN method overview">
+        </figure>
+        <div>
+          <h3 class="paper-title">
+            <a href="https://arxiv.org/abs/2410.18687">
+              ODDN: Addressing Unpaired Data Challenges in Open-World Deepfake Detection on Online Social Networks
+            </a>
+          </h3>
+          <p class="paper-meta">AAAI 2025 / AIGC detection / Open-world deepfake detection / Online social networks</p>
+          <div class="links">
+            <a class="button" href="https://arxiv.org/abs/2410.18687">Paper</a>
+            <a class="button" href="https://arxiv.org/pdf/2410.18687">PDF</a>
+            <a class="button" href="https://github.com/ManyiLee/Open-world-Deepfake-Detection-Network">Code</a>
+            <span class="tag">ODDN</span>
+          </div>
+          <p class="abstract">
+            Despite significant advances in deepfake detection, varying image quality caused by
+            different compressions on online social networks remains challenging. Existing methods
+            often rely on paired raw and compressed images, while open-world scenarios contain many
+            more unpaired compressed samples than corresponding raw versions. ODDN addresses this
+            problem with open-world data aggregation (ODA) and compression-discard gradient correction
+            (CGC), aggregating paired and unpaired correlations while reducing sensitivity to
+            compression variations. Experiments on 17 popular deepfake datasets show that ODDN
+            outperforms state-of-the-art baselines.
+          </p>
+        </div>
+      </article>
+
+      <article class="paper" id="qmdd">
+        <figure class="paper-figure">
+          <img src="./Imgs/PaperPhotos/QMDD.png" alt="QMDD method overview">
+        </figure>
+        <div>
+          <h3 class="paper-title">
+            <a href="https://www.ijcai.org/proceedings/2025/0059.pdf">
+              Unlocking the Potential of Lightweight Quantized Models for Deepfake Detection
+            </a>
+          </h3>
+          <p class="paper-meta">IJCAI 2025 / Lightweight deepfake detection / Model quantization / Edge deployment</p>
+          <div class="links">
+            <a class="button" href="https://www.ijcai.org/proceedings/2025/0059.pdf">Paper</a>
+            <a class="button" href="https://github.com/rstao-bjtu/QMDD">Code</a>
+            <span class="tag">QMDD</span>
+          </div>
+          <p class="abstract">
+            Deepfake detection is increasingly crucial due to the rapid rise of AI-generated content.
+            Existing methods achieve high performance by relying on computationally intensive large
+            models, making real-time detection on resource-constrained edge devices challenging.
+            This work proposes a low-bit quantization framework for lightweight and efficient
+            deepfake detection. The Connected Quantized Block extracts common forgery features via
+            the quantized path while retaining method-specific textures through shortcut connections,
+            and the Shifted Logarithmic Redistribution Quantizer mitigates near-zero information loss
+            by unfolding unbalanced activations. Comprehensive experiments show 10.8x lower
+            computational costs and 12.4x lower storage requirements while maintaining strong
+            detection performance, even surpassing SOTA methods using less than 5% FLOPs.
+          </p>
+        </div>
+      </article>
+
+      <article class="paper" id="sagnet">
+        <figure class="paper-figure">
+          <img src="./Imgs/PaperPhotos/SAGNet.png" alt="SAGNet method overview">
+        </figure>
+        <div>
+          <h3 class="paper-title">
+            <a href="https://ieeexplore.ieee.org/document/11045799">
+              SAGNet: Decoupling Semantic-Agnostic Artifacts From Limited Training Data for Robust Generalization in Deepfake Detection
+            </a>
+          </h3>
+          <p class="paper-meta">IEEE TIFS / Limited-data deepfake detection / Semantic-agnostic artifacts / Robust generalization</p>
+          <div class="links">
+            <a class="button" href="https://ieeexplore.ieee.org/document/11045799">Paper</a>
+            <a class="button" href="https://github.com/rstao-bjtu/SAGNet/">Code</a>
+            <span class="tag">SAGNet</span>
+          </div>
+          <p class="abstract">
+            Deepfake detection becomes especially challenging when training data covers only limited
+            semantic categories. Existing methods can show strong performance bias between seen and
+            unseen classes, limiting real-world generalization. SAGNet decouples semantic-agnostic
+            artifacts from content-specific distributions so the model focuses on universal
+            authenticity cues rather than semantic content. This strategy improves generalization
+            under limited training data, achieving performance comparable to models trained with 10
+            times more data and extending across different semantic categories as well as GAN-based
+            and diffusion-based generation methods.
+          </p>
+        </div>
+      </article>
+
+      <article class="paper" id="ftnet">
+        <figure class="paper-figure">
+          <img src="./Imgs/PaperPhotos/FTNet.png" alt="FTNet method overview">
+        </figure>
+        <div>
+          <h3 class="paper-title">
+            <a href="https://arxiv.org/abs/2508.09475">
+              Leveraging Failed Samples: A Few-Shot and Training-Free Framework for Generalized Deepfake Detection
+            </a>
+          </h3>
+          <p class="paper-meta">AAAI 2026 / Few-shot deepfake detection / Training-free framework / Generalization</p>
+          <div class="links">
+            <a class="button" href="https://arxiv.org/abs/2508.09475">Paper</a>
+            <a class="button" href="https://arxiv.org/pdf/2508.09475">PDF</a>
+            <a class="button" href="https://github.com/zuiluorenjian/FTNet">Code</a>
+            <span class="tag">FTNet</span>
+          </div>
+          <p class="abstract">
+            Recent deepfake detection studies often treat unseen sample detection as a zero-shot
+            task, but real-world failed samples may be available for analysis. FTNet reframes this
+            setting as few-shot deepfake detection and proposes a simple training-free framework
+            that uses only one fake sample from the evaluation set, without parameter updates. During
+            evaluation, each test sample is compared with known fake and real samples and classified
+            by the nearest category. Experiments on AI-generated images from 29 generative models
+            achieve new SOTA performance, with an average improvement of 8.7% over existing methods.
+          </p>
+        </div>
+      </article>
+
+      <article class="paper" id="dpgnet">
+        <figure class="paper-figure">
+          <img src="./Imgs/PaperPhotos/DPGNet.png" alt="DPGNet method overview">
+        </figure>
+        <div>
+          <h3 class="paper-title">
+            <a href="https://arxiv.org/abs/2508.09022">
+              Leveraging Unlabeled Data from Unknown Sources via Dual-Path Guidance for Deepfake Face Detection
+            </a>
+          </h3>
+          <p class="paper-meta">CVPR 2026 / Unlabeled deepfake face data / Dual-path guidance / Generalization</p>
+          <div class="links">
+            <a class="button" href="https://arxiv.org/abs/2508.09022">Paper</a>
+            <a class="button" href="https://arxiv.org/pdf/2508.09022">PDF</a>
+            <a class="button" href="https://github.com/happyangzq/DPGNet">Code</a>
+            <span class="tag">DPGNet</span>
+          </div>
+          <p class="abstract">
+            Existing deepfake detection methods rely heavily on static labeled datasets, while
+            real-world scenarios contain large amounts of unlabeled fake face data from unknown
+            sources. DPGNet introduces dual-path guidance to bridge domain differences across
+            generative models and utilize unlabeled samples. It combines text-guided cross-domain
+            alignment with curriculum-driven pseudo-label generation, forming a domain-invariant
+            feature space and dynamically incorporating unlabeled data. Experiments on multiple
+            mainstream datasets show strong improvements over existing techniques.
+          </p>
+        </div>
+      </article>
+    </section>
+
+
+    <p class="footer">Last updated: May 2026.</p>
+  </main>
+</body>
+</html>
